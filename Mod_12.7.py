@@ -10,9 +10,9 @@ per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
 money = int(input('Введите сумму: '))
 
 # Создаем и заполняем список deposit для хранения данных о накопленных средствах за год вклада в каждом из банков
-deposit = []
-for value in per_cent.values():
-    deposit.append(int(money*value/100))
+deposit = [int(money*value/100) for value in per_cent.values()]
+# Выводим на экран список deposit
+print('Накопленные средства за год вклада в каждом из банков:', * deposit)
 
 # Находим максимальное значение в списке deposit
 max_income = max(deposit)
